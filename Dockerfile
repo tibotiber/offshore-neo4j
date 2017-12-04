@@ -1,5 +1,6 @@
 FROM neo4j:3.3.0
-MAINTAINER Ryan Boyd, <ryan@neo4j.com>
+LABEL maintainer="Thibaut Tiberghien <thibaut.tiberghien@thomsonreuters.com>"
+LABEL author="Ryan Boyd, <ryan@neo4j.com>"
 
 RUN apk update
 RUN apk add --quiet openssl sed wget unzip
@@ -7,7 +8,8 @@ RUN cd /var/lib/neo4j/plugins/; wget "https://github.com/neo4j-contrib/neo4j-apo
 RUN cd /var/lib/neo4j/plugins/; wget "https://github.com/neo4j-contrib/neo4j-graph-algorithms/releases/download/3.3.0.0/graph-algorithms-algo-3.3.0.0.jar"
 
 COPY download_db.sh /download_db.sh
+COPY configure_db.sh /configure_db.sh
 COPY configure.cql /configure.cql 
 
-ENV EXTENSION_SCRIPT /download_db.sh
+ENV EXTENSION_SCRIPT /configure_db.sh
 ENV NEO4J_AUTH=none
