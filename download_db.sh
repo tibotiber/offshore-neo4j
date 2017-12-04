@@ -29,7 +29,6 @@ done
 
 for i in ${DATA_DIR}/${LEAK}/*.csv
 do
-#    sed -i '' -e '1,1 s/node_id,/node_id:ID,/' $i
     echo "adding ID to node_id property in file: $i"
     sed -i -e '1,1 s/node_id/node_id:ID/g' $i
 done
