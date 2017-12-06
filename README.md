@@ -19,6 +19,21 @@ Note that this maps to port 80 and 443 of the host for HTTP(s), as well as port
 logs to `$HOME/neo4j` on the host. Feel free to change these based on your
 use-case.
 
+To restart an container, ssh into the instance, then list container with:
+
+```
+docker ps -a
+```
+
+note the container id and restart it with:
+
+```
+docker start <container>
+```
+
+You can also add `-a` to the start command if you want to attach standard IOs
+(not suitable for launching a long running server over ssh).
+
 ## On AWS
 
 I built this to run on EC2 instances, I recommend a `m4.xlarge` at least at the
