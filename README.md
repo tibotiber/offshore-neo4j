@@ -30,8 +30,10 @@ Security group ports to open:
 * SSH 22
 * HTTP 80
 * HTTPS 443
-* BOLT 7687 Feel free to change the exposed ports in the security group and the
-  `docker run` command.
+* BOLT 7687
+
+Feel free to change the exposed ports in the security group and the `docker run`
+command.
 
 ### Setup
 
