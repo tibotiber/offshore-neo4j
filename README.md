@@ -37,7 +37,7 @@ command.
 
 ### Setup
 
-SHH into the instance and install docker:
+SSH into the instance and install docker:
 
 ```
 sudo yum update -y
