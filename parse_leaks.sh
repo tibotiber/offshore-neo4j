@@ -7,9 +7,9 @@ LEAKS_FILE="csv_$LEAK.2017-11-17.zip"
 # unzip leak and move to data dir
 cd $LEAKS_DIR
 if [ ! -f "./$LEAK.edges.csv" ]; then
-  unzip "$LEAKS_FILE"
-  mkdir $DATA_DIR/$LEAK
-  mv *.csv $DATA_DIR/$LEAK
+    unzip "$LEAKS_FILE"
+    mkdir $DATA_DIR/$LEAK
+    mv *.csv $DATA_DIR/$LEAK
 fi
 
 # merge leak into csv file for import to neo4j
