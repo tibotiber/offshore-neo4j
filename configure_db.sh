@@ -3,7 +3,7 @@ NEO4J_HOME=/var/lib/neo4j
 CONF=${NEO4J_HOME}/conf/neo4j.conf
 DATA_DIR="/csv"
 
-if [ ! -d $DATA_DIR ]; then
+if [ ! -d "${NEO4J_HOME}/data/databases/graph.db" ]; then
     mkdir $DATA_DIR
 
     /parse_leaks.sh bahamas_leaks $DATA_DIR
