@@ -16,6 +16,8 @@ if [ ! -d "${NEO4J_HOME}/data/databases/graph.db" ]; then
     cd $NEO4J_HOME
 
     echo 'dbms.security.procedures.unrestricted=apoc.*,algo.*' >> $CONF
+    echo 'apoc.export.file.enabled=true' >> $CONF
+    echo 'apoc.import.file.enabled=true' >> $CONF
     echo 'dbms.security.auth_enabled=false' >> $CONF
     echo 'browser.remote_content_hostname_whitelist=*' >> $CONF
 
